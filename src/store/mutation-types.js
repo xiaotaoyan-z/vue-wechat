@@ -1,0 +1,1 @@
+export const SET_MOBILE_MUTE = 'SET_MOBILE_MUTE'
