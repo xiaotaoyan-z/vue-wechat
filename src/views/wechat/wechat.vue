@@ -1,8 +1,6 @@
 <template>
   <div class="wechat">
-    <!--<img src="./assets/logo.png">-->
-    <!--底部导航-->
-    <header-top head-back='true' head-more='true'></header-top>
+    <header-top head-more='true'></header-top>
     <div class="content">
       <section class="computer">
         <router-link to='/computer' class='computer-link'>
@@ -46,7 +44,8 @@ export default {
   transition: all .4s;
 }
 .router-show-enter,.router-show-leave-active{
-  transform:translateX(100%)
+  opacity: 0;
+  transform:translateY(30rem);
 }
 .content {
   .computer {

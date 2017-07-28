@@ -19,6 +19,7 @@
     <section class="exit">
       <div class="exitWin" @click='showMenu'>退出 Windows 微信</div>
     </section>
+    <transition name='fade'>
     <section class="exit-menu" v-show='exitMenu'>
       <div class="mask" @click='closeMenu'></div>
       <div class="menu-win">
@@ -29,6 +30,7 @@
         </div>
       </div>
     </section>
+    </transition>
   </div>
 </template>
 
@@ -68,6 +70,20 @@ export default {
 </script>
 
 <style lang='scss' scoped>
+.fade-enter-active, .fade-leave-active {
+  //transition: opacity .5s;
+  transition: all 1s;
+  .mask {
+    transition: opacity 1s;
+  }
+  .menu-win {
+    transition: all 1s;
+  }
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active 在低于版本 2.1.8 中 */ {
+  opacity: 0;
+  transform: translateY(20rem);
+}
 .computer {
   width: 100%;
   header {
